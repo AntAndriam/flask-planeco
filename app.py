@@ -38,5 +38,7 @@ app.register_blueprint(appareil_bp, url_prefix="/appareils")
 app.register_blueprint(alert_bp, url_prefix="/alerts")
 app.register_blueprint(user_bp, url_prefix="/user")
 
+
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=False, host="0.0.0.0", port=port)
