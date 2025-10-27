@@ -38,7 +38,9 @@ app.register_blueprint(appareil_bp, url_prefix="/appareils")
 app.register_blueprint(alert_bp, url_prefix="/alerts")
 app.register_blueprint(user_bp, url_prefix="/user")
 
+@app.route("/")
+def home():
+    return "Hello, world!"  # ou ton template HTML
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(debug=False, host="0.0.0.0", port=port)
+    app.run(host="0.0.0.0", port=10000)
